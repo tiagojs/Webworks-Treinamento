@@ -1,6 +1,6 @@
+<div data-bb-type="screen" data-bb-effects="slide-left">
 
-<div id="content"> 
-      <h1>Mover a bola</h1> 
+      <div data-bb-type="header" >Exemplo Sensor de movimento</div>
       <div id="yes"> 
           <p>Movimente seu aparelho para mover a bolinha.</p> 
           <p></p> 
@@ -10,48 +10,7 @@
       <div id="no"> 
       Seu browser não da suporte a essa API - Device Orientation e Motion API. Tente esse exemplo no seu device.
       </div> 
-  </div> 
-  <script> 
-  var x = 0, y = 0;
-  // Speed - Velocity
-  var vx = 0, vy = 0;
-  // Acceleration
-  var ax = 0, ay = 0;
-  var delay = 10;
-  var vMultiplier = 0.01;
-  var doc = document;
-  window.onload = function() {
-    if (window.DeviceMotionEvent==undefined) {
-    	doc.getElementById("no").style.display="block";
-    	doc.getElementById("yes").style.display="none";
-    } else {
-    	window.ondevicemotion = function(event) {
-    		ax = event.accelerationIncludingGravity.x;
-    		ay = event.accelerationIncludingGravity.y;
-    	}
-         function executa (){
-    		vy = vy + -(ay);
-    		vx = vx + ax;
-    		var ball = doc.getElementById("ball");
-    		y = parseInt(y + vy * vMultiplier);
-    		x = parseInt(x + vx * vMultiplier);
-    		if (x<0) { x = 0; vx = 0; }
-    		if (y<0) { y = 0; vy = 0; }
-    		var lim_x = doc.documentElement.clientWidth-20
-    		if (x>lim_x) { 
-    		    x = lim_x; 
-    		    vx = 0; 
-    		}
-    		var lim_y = doc.documentElement.clientHeight-20
-    		if (y>lim_y) { 
-                y = lim_y; 
-                vy = 0; 
-    		}
-    		ball.style.top = y + "px";
-    		ball.style.left = x + "px";
-    		doc.getElementById("pos").innerHTML = "x=" + x + "<br />y=" + y;
-         }
-    	setInterval(executa, delay);
-    } 
-  };
-  </script> 
+      
+
+  <div data-bb-type="action-bar" data-bb-back-caption="Voltar"></div>
+ </div>

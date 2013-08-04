@@ -1,16 +1,59 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Exemplos Webworks</title>
-	<link rel="stylesheet" type="css/text" href="css/style.css">
-	<link rel="stylesheet" type="css/text" href="css/bbui-min.css">
-	<script src="local:///chrome/webworks.js"></script>
-	<script data-main="js/app" src="js/require.js"></script>
-	
-	
-</head>
-<body>
-	
-</body>
+ <head>
+  <meta charset="UTF-8">
+  <title>Exemplos Webworks</title>
+  <link rel="stylesheet" type="css/text" href="css/style.css">
+  <link rel="stylesheet" type="css/text" href="css/bbui-min.css">
+  <script src="local:///chrome/webworks.js"></script>
+  <script src="js/require.js"></script>
+  <script>
+   document.addEventListener("webworksready", function(e){
+    requirejs.config({
+     //By default load any module IDs from js/lib
+     baseUrl: 'js/lib',
+     //except, if the module ID starts with "app",
+     //load it from the js/app directory. paths
+     //config is relative to the baseUrl, and
+     //never includes a ".js" extension since
+     //the paths config could be for a directory.
+     //    paths: {
+     //        app: '../app'
+     //    }
+    });
+    
+    requirejs(["sensor","bbui","bbm.min","foto_camera"], function() {
+         var config = {};
+    console.log("webworks pronto")
+    config.onscreenready = function(element, id) {
+     // aqui podemos adicionar elementos no dom	
+     
+     console.log("screen: " , element)
+    };
+    config.ondomready = function(element, id, params) {
+     if (id == 'home') {
+      console.log("dom: " , element)
+      //var tela = element.querySelector("[data-bb-type='screen']");
+     } 
+     if (id == "acelerometro") {
+      console.log("leu o sensor " + sensor)
+      sensor.initSensor();
+     }
+     
+    };
+    
+    bb.init(config);
+    bb.pushScreen("lista-grade.html", "home");	
+    });
+
+   },false);
+   
+   
+   
+  </script>
+  
+ </head>
+ <body>
+  
+ </body>
 </html>
