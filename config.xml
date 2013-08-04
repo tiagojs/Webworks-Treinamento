@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        version="1.0.0.1" id="app-frontin-bh">
+ 
+  <author href="http://www.edunet.com.br"
+          rim:copyright="Copyright 1998-2013 Tiago Venegas">Tiago Venegas</author>
+ 
+  <name>Front in BH 2013</name>
+ 
+  <description>
+	 Aplicativo desenvolvido para o Front in BH
+  </description>
+ 
+
+ 
+  <icon src="images/icon.png"/>
+ 
+  <content src="index.html" rim:allowInvokeParams="true"/>
+  <feature id="blackberry.ui.dialog"/>
+	
+  <feature id="blackberry.app"/>
+  <feature id="blackberry.app.event"/>
+  <feature id="blackberry.ui.contextmenu"/>
+
+  <feature id="blackberry.bbm.platform" />
+  
+  <rim:permissions>
+    <rim:permit>access_shared</rim:permit>
+     <rim:permit>bbm_connect</rim:permit>
+  </rim:permissions>
+
+  <access uri="http://tableless.com.br" subdomains="true">
+    <feature id="blackberry.app" required="true" version="1.0.0"/>
+    <feature id="blackberry.invoke" required="true" version="1.0.0"/>
+  </access>
+
+  <access uri="http://twitter.com" subdomains="true">
+    <feature id="blackberry.app" required="true" version="1.0.0"/>
+    <feature id="blackberry.invoke" required="true" version="1.0.0"/>
+  </access>
+</widget>
