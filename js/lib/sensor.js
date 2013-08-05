@@ -28,7 +28,6 @@ var sensor = {
     		if (sensor.x>lim_x) { 
     		    sensor.x = lim_x; 
     		    sensor.mudax();
-             
     		}
     		var lim_y = doc.documentElement.clientHeight-tam
     		if (sensor.y>lim_y) { 
