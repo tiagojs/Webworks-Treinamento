@@ -10,7 +10,7 @@ Aplicativo com um série de exemplos desenvolvidos com Webworks
  3. Câmera
  4. Cards
  5. Touch
- 6. Slides
+ 6. Slider
  7. Lendo dados externos
  8. BBUIJS
  9. Sqlite
