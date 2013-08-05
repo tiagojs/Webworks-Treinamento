@@ -2,7 +2,8 @@ Webworks-Treinamento
 ====================
 
 Aplicativo com um série de exemplos desenvolvidos com Webworks
- itens da lista de recursos:
+
+<strong>Ítens da lista de recursos:</strong>
  
  1. Acelerômetro
  2. Mapas
